@@ -39,6 +39,7 @@
 }
 
 .game-start__title {
+  text-align: center;
   flex-grow: 1;
 
   font-weight: 600;
