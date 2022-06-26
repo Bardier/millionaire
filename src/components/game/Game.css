@@ -24,12 +24,6 @@
   padding: 0 10px;
 }
 
-.game__answers {
-}
-
-.answers {
-}
-
 .answers__list {
   list-style: none;
   padding: 0;
@@ -118,9 +112,6 @@
 }
 .dn {
   display: none;
-}
-
-.count {
 }
 
 .count__list {
@@ -229,8 +220,7 @@
     grid-area: score;
     position: static;
   }
-  .count {
-  }
+
   .count__list {
     padding: 0;
     height: inherit;
