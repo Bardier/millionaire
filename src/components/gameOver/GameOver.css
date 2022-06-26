@@ -1,0 +1,58 @@
+.game-over {
+  height: 100vh;
+  background-color: rgba(245, 245, 247, 1);
+}
+
+.game-over .container {
+  text-align: center;
+  padding: 80px 10px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-over__content {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-over__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 116%;
+  color: rgba(191, 191, 194, 1);
+  margin: 32px 0 8px 0;
+}
+
+.game-over__prize {
+  flex-grow: 1;
+
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 116%;
+  color: rgba(28, 28, 33, 1);
+}
+
+@media (min-width: 1050px) {
+  .game-over .container {
+    flex-direction: row;
+    padding-top: 229px;
+    align-items: start;
+  }
+  .game-over__content {
+    margin-top: 87px;
+    align-items: start;
+  }
+  .game-over__title {
+    margin-top: 0;
+    font-size: 32px;
+  }
+  .game-over__prize {
+    text-align: left;
+    font-size: 56px;
+    margin-bottom: 64px;
+  }
+}

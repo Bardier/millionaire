@@ -1,0 +1,246 @@
+.game {
+  height: 100vh;
+}
+
+.game .container {
+  background-color: rgba(245, 245, 247, 1);
+}
+
+.game__content {
+  padding: 136px 0 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.game__question {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 116%;
+  color: rgba(28, 28, 33, 1);
+  padding: 0 10px;
+}
+
+.game__answers {
+}
+
+.answers {
+}
+
+.answers__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answers__item {
+  margin-bottom: 8px;
+  width: 288px;
+  height: 56px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 56px;
+  color: rgba(28, 28, 33, 1);
+
+  cursor: pointer;
+  position: relative;
+
+  background: url("./../../resources/img/inactive.png") 0 0/100% 100% no-repeat;
+}
+.answers__item::before,
+.answers__item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 17px;
+  height: 1px;
+  background-color: rgba(208, 208, 216, 1);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.answers__item::before {
+  right: 100%;
+}
+.answers__item::after {
+  left: 100%;
+}
+
+.answers__item--selected {
+  background-image: url(./../../resources/img/selected.png);
+}
+.answers__item--selected::before,
+.answers__item--selected::after {
+  background-color: rgba(40, 105, 232, 0.8);
+}
+
+.answers__item--correct {
+  background-image: url(./../../resources/img/correct.png);
+}
+.answers__item--correct::before,
+.answers__item--correct::after {
+  background-color: rgba(81, 179, 102, 1);
+}
+
+.answers__item--wrong {
+  background-image: url(./../../resources/img/wrong.png);
+}
+.answers__item--wrong::before,
+.answers__item--wrong::after {
+  background-color: rgba(236, 89, 116, 1);
+}
+
+.answers__item:last-child {
+  margin-bottom: 0;
+}
+.answers__item span {
+  display: inline-block;
+  margin: 0 8px 0 24px;
+
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(40, 105, 232, 0.8);
+}
+
+.game__count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.df {
+  display: flex;
+}
+.dn {
+  display: none;
+}
+
+.count {
+}
+
+.count__list {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(245, 245, 247, 1);
+  padding-bottom: 32px;
+}
+
+.count__item {
+  text-align: center;
+  width: 240px;
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 8px;
+  background: url("./../../resources/img/inactive.png") 0 0/100% 100% no-repeat;
+  position: relative;
+
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(28, 28, 33, 1);
+}
+.count__item::before,
+.count__item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 41px;
+  height: 1px;
+  background-color: rgba(208, 208, 216, 1);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.count__item::before {
+  left: 100%;
+}
+.count__item::after {
+  right: 100%;
+}
+
+.count__item--passed {
+  color: rgba(208, 208, 216, 1);
+}
+
+.count__item--active {
+  color: rgba(40, 105, 232, 0.8);
+  background-image: url("./../../resources/img/active.png");
+}
+.count__item--active::before,
+.count__item--active::after {
+  background-color: rgba(40, 105, 232, 0.8);
+}
+
+@media (min-width: 1050px) {
+  .game .container {
+    background-color: transparent;
+  }
+  .game__content {
+    display: grid;
+    grid-template-columns: 1fr 376px;
+    grid-template-areas:
+      "title score"
+      "answers score";
+    align-items: center;
+    padding: 0;
+  }
+  .game__question {
+    grid-area: title;
+    height: 100%;
+    background-color: rgba(245, 245, 247, 1);
+    padding: 133px 10px 0 80px;
+    text-align: left;
+    font-size: 32px;
+  }
+  .game__answers {
+    grid-area: answers;
+    height: 100%;
+    background-color: rgba(245, 245, 247, 1);
+  }
+  .answers__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 96px;
+  }
+  .answers__item {
+    width: 389px;
+    height: 72px;
+    font-size: 20px;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    line-height: 72px;
+  }
+  .answers__item:last-child {
+    margin-bottom: 32px;
+  }
+  .answers__item span {
+    font-size: 20px;
+  }
+  .game__count {
+    display: flex;
+    grid-area: score;
+    position: static;
+  }
+  .count {
+  }
+  .count__list {
+    padding: 0;
+    height: inherit;
+    background-color: transparent;
+  }
+  .count__item {
+    height: 40px;
+  }
+  .count__item::before,
+  .count__item::after {
+    width: 69px;
+  }
+}
